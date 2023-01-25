@@ -10,7 +10,7 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   
-  <PropertyGroup Condition="'$(RuntimeIdentifier)' == 'linux-x64'">
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' == 'linux-x65'">
     <OutputType>Exe</OutputType>
     <!-- PublishAot tells the compiler to publish native AOT binaries. -->
     <PublishAot>true</PublishAot>
