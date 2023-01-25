@@ -1,0 +1,31 @@
+name: Deploy to AWS Lambda
+
+on:
+  push:
+    branches:
+      - master
+      - github
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      AWS_REGION: ap-southeast-1
+      AWS_STACK_NAME: Dnw-OneForTwelve-Aws-Api
+      AWS_S3_BUCKET: dnw-templates-2022
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dotnet lambda tools
+        run: dotnet tool install -g Amazon.Lambda.Tools
+
+      - name: Deploy to Lambda
+        run: |
+          dotnet lambda deploy-serverless \
+            --stack-name $AWS_STACK_NAME \
+            --s3-bucket $AWS_S3_BUCKET \
+            --region $AWS_REGION
