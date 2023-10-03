@@ -8,15 +8,15 @@
     <AssemblyName>bootstrap</AssemblyName>
     <!-- This property makes the build directory similar to a publish directory and helps the AWS .NET Lambda Mock Test Tool find project dependencies. -->
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-  </PropertyGroup>
-  
-  <PropertyGroup Condition="'$(RuntimeIdentifier)' == 'linux-x65'">
     <OutputType>Exe</OutputType>
-    <!-- PublishAot tells the compiler to publish native AOT binaries. -->
-    <PublishAot>true</PublishAot>
     <!-- StripSymbols tells the compiler to strip debugging symbols from the final executable if we're on Linux and put them into their own file. 
     This will greatly reduce the final executable's size.-->
     <StripSymbols>true</StripSymbols>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' == 'linux-x65'">
+    <!-- PublishAot tells the compiler to publish native AOT binaries. -->
+    <PublishAot>true</PublishAot>
     <!-- TrimMode partial will only trim assemblies marked as trimmable. To reduce package size make all assemblies trimmable and set TrimMode to full.
     If there are trim warnings during build, you can hit errors at runtime.-->
     <TrimMode>partial</TrimMode>
