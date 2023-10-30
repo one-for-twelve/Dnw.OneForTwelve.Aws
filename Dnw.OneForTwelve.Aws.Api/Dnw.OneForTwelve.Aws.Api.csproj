@@ -14,26 +14,6 @@
         <StripSymbols>true</StripSymbols>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(RuntimeIdentifier)' == 'linux-x65'">
-        <!-- PublishAot tells the compiler to publish native AOT binaries. -->
-        <PublishAot>true</PublishAot>
-        <!-- TrimMode partial will only trim assemblies marked as trimmable. To reduce package size make all assemblies trimmable and set TrimMode to full.
-        If there are trim warnings during build, you can hit errors at runtime.-->
-        <TrimMode>partial</TrimMode>
-    </PropertyGroup>
-
-    <!-- if TrimMode is set to full we can use this section to specify assemblies we don't want to trim -->
-    <!--  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'linux-x64'">-->
-    <!--    <TrimmerRootAssembly Include="Amazon.Lambda.APIGatewayEvents" />-->
-    <!--    <TrimmerRootAssembly Include="Amazon.Lambda.ApplicationLoadBalancerEvents" />-->
-    <!--    <TrimmerRootAssembly Include="Amazon.Lambda.AspNetCoreServer" />-->
-    <!--    <TrimmerRootAssembly Include="Amazon.Lambda.AspNetCoreServer.Hosting" />-->
-    <!--    <TrimmerRootAssembly Include="Amazon.Lambda.Core" />-->
-    <!--    <TrimmerRootAssembly Include="Amazon.Lambda.Logging.AspNetCore" />-->
-    <!--    <TrimmerRootAssembly Include="Amazon.Lambda.Serialization.SystemTextJson" />-->
-    <!--    <TrimmerRootAssembly Include="CsvHelper" />-->
-    <!--  </ItemGroup>-->
-
     <ItemGroup>
         <PackageReference Include="Amazon.Lambda.AspNetCoreServer.Hosting" Version="1.5.0" />
         <PackageReference Include="Dnw.OneForTwelve.Core" Version="0.0.3" />
