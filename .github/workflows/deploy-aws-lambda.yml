@@ -13,6 +13,8 @@ jobs:
       AWS_REGION: ap-southeast-1
       AWS_STACK_NAME: Dnw-OneForTwelve-Aws-Api
       AWS_S3_BUCKET: dnw-templates-2022
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
       - name: Checkout code
