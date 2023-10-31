@@ -112,6 +112,8 @@ And you can then test it like this:
 dotnet lambda invoke-function Dnw-OneForTwelve-Aws-Api -p "{}"
 ```
 
+If you get errors when deploying the function using GitHub actions make sure you have configured an AWS Api Key and Secret. If (like me) you store these as secrets on the organisation level, the repository must be public, otherwise the API Key and Secret will always be empty!   
+
 # Temporarily stop an aws lambda function
 
 ```
