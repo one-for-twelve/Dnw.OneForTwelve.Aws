@@ -99,5 +99,7 @@ public static class WebAppBuilder
         }
 
         app.UseHttpsRedirection();
+        
+        app.UseGameServices();
     }
 }

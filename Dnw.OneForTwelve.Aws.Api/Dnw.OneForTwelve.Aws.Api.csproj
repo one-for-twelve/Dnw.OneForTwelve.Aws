@@ -13,12 +13,12 @@
         This will greatly reduce the final executable's size.-->
         <StripSymbols>true</StripSymbols>
     </PropertyGroup>
-
+    
     <ItemGroup>
-        <PackageReference Include="Amazon.Lambda.AspNetCoreServer.Hosting" Version="1.5.0" />
-        <PackageReference Include="Dnw.OneForTwelve.Core" Version="0.0.3" />
+        <PackageReference Include="Amazon.Lambda.AspNetCoreServer.Hosting" Version="1.6.0" />
+        <PackageReference Include="Dnw.OneForTwelve.Core" Version="0.1.1" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-        <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+        <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(RuntimeIdentifier)' == 'linux-arm64'">
